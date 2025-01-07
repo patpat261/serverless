@@ -1,25 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <parent>
         <artifactId>CineVisionMicroservice</artifactId>
         <groupId>com.kaankaplan</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>user-service</artifactId>
-
     <name>userService</name>
     <url>http://www.example.com</url>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>17</maven.compiler.source>   <!-- Keep Java 17 -->
-        <maven.compiler.target>17</maven.compiler.target>   <!-- Keep Java 17 -->
+        <maven.compiler.source>17</maven.compiler.source>
+        <!-- Keep Java 17 -->
+        <maven.compiler.target>17</maven.compiler.target>
+        <!-- Keep Java 17 -->
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -30,6 +27,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.ben-manes.caffeine</groupId>
+            <artifactId>caffeine</artifactId>
+            <version>3.1.8</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -63,7 +65,8 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.30</version> <!-- Added version for consistency -->
+            <version>1.18.30</version>
+            <!-- Added version for consistency -->
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -74,7 +77,6 @@
             <artifactId>spring-cloud-sleuth-zipkin</artifactId>
         </dependency>
     </dependencies>
-
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -86,7 +88,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
     <build>
         <plugins>
             <!-- Spring Boot Maven Plugin to create an executable JAR -->
@@ -96,12 +97,12 @@
                 <executions>
                     <execution>
                         <goals>
-                            <goal>repackage</goal> <!-- Repackage to executable JAR -->
+                            <goal>repackage</goal>
+                            <!-- Repackage to executable JAR -->
                         </goals>
                     </execution>
                 </executions>
             </plugin>
-
             <!-- Compiler plugin for Java 17 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -114,5 +115,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
